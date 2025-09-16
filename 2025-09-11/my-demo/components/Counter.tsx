@@ -8,7 +8,7 @@ function Counter() {
   }
   return (
     <>
-        <h1>Vite you + React me + and her</h1>
+        <h1>Vite (you) + React (me) + and her</h1>
         <div className="card">
 
           <div>{count}</div>
