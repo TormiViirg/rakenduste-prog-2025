@@ -1,4 +1,5 @@
 import Counter from "../components/Counter"
+import Dice from "../components/Dice"
 import StaticText from "../components/CopyWright"
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
         <>
             <Counter/>
             <StaticText/>
+            <Dice/>
         </>
     )
 }
