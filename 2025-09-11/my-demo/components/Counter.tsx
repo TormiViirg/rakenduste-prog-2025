@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 function Counter() {
   const [count, setCount] = useState(0)
@@ -6,6 +6,20 @@ function Counter() {
   function updateCounter(amount: number){
     setCount(count => count + amount)
   }
+
+  useEffect(() => {
+    console.log("counter mounted")
+  })
+
+  useEffect(() => {
+    console.log("counter mounted")
+  }, [])
+
+  useEffect(() => {
+    console.log("counter mounted", count)
+  }, [count])
+
+  
   return (
     <>
         <h1>Vite (you) + React (me) + and her</h1>
