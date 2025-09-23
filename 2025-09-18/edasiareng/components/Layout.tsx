@@ -1,12 +1,12 @@
-import { Outlet, Link } from "react-router";
-import Box from "@mui/material/Box";
-import Drawer from "@mui/material/Drawer";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemText from "@mui/material/ListItemText";
+import { Outlet, Link } from "react-router"
+import Box from "@mui/material/Box"
+import Drawer from "@mui/material/Drawer"
+import Toolbar from "@mui/material/Toolbar"
+import Typography from "@mui/material/Typography"
+import List from "@mui/material/List"
+import ListItem from "@mui/material/ListItem"
+import ListItemButton from "@mui/material/ListItemButton"
+import ListItemText from "@mui/material/ListItemText"
 
 
 const drawerWidth = 200;

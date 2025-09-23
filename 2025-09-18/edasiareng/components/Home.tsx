@@ -4,8 +4,8 @@ function Home(){
     return (
         <>
            <Box>
-                <Typography variant="h3">Tormi Viirg</Typography>
-                <Typography variant="h3">Bio</Typography>
+                <Typography variant="h4">Tormi Viirg</Typography>
+                <Typography variant="h4">Bio</Typography>
                 <Typography variant="body2">
                     Olen informaatika eriala tudeng Tallinna Ülikoolist tarkvaraarenduse suunalt. Olen pädev
                     veebiprogrammeerimises, dünaamiliste ja infotihedate kasutajaliideste disainimises, digimeedias,
