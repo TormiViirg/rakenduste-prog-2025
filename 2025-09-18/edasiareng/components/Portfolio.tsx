@@ -1,7 +1,8 @@
-export default function Portfolio(){
+function Portfolio(){
     return (
         <>
 
         </>
     );
 } 
+export default Portfolio

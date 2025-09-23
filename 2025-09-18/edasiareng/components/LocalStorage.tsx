@@ -1,7 +1,8 @@
-export default function LocalStorage(){
+function LocalStorage(){
     return (
         <>
 
         </>
     );
 } 
+export default LocalStorage
