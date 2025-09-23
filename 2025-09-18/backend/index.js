@@ -18,10 +18,15 @@ app.delete("/", (req, res) => {
     res.send("I have been made reduntant")
 })
 
-app.get('/users/:userId/books/:bookId', (req, res) => {
+app.get('/monkies/:monkeyId/zoo/:zooId/city/:name', (req, res) => {
   res.send(req.params)
 })
 
-app.get('/flights/:from-:to', (req, res) => {
+app.get('/birdMigration/:from/:stop/:to', (req, res) => {
   res.send(req.params)
 })
+
+
+app.listen(3000, () => {
+    console.log('Server is running on port 3000');
+});
