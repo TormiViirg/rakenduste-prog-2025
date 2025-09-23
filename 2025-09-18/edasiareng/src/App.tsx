@@ -1,9 +1,9 @@
 import {Route, Routes } from 'react-router'
 
 import Home from "../components/Home"
-import AboutMe from "../components/AboutMe";
-import Portfolio from "../components/Portfolio";
-import LocalStorage from "../components/LocalStorage";
+import AboutMe from "../components/AboutMe"
+import Portfolio from "../components/Portfolio"
+import LocalStorage from "../components/LocalStorage"
 import Layout from "../components/Layout"
 
 import './App.css'

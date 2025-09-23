@@ -20,7 +20,6 @@ const navItems = [
 export default function Layout() {
   return (
     <Box sx={{ display: "flex" }}>
-      {/* Drawer */}
       <Drawer
         variant="permanent"
         sx={{
@@ -33,7 +32,7 @@ export default function Layout() {
         }}
       >
         <Toolbar>
-          <Typography variant="h6">My Portfolio</Typography>
+          <Typography variant="h5">My Portfolio</Typography>
         </Toolbar>
         <List>
           {navItems.map((item) => (
@@ -46,12 +45,11 @@ export default function Layout() {
         </List>
       </Drawer>
 
-      {/* Main content */}
       <Box
         component="main"
         sx={{ flexGrow: 1, bgcolor: "background.default", p: 3 }}
       >
-        <Toolbar /> {/* Spacer for AppBar */}
+        <Toolbar />
         <Outlet />
       </Box>
     </Box>

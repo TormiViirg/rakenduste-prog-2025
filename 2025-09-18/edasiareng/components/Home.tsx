@@ -7,7 +7,7 @@ function Home(){
                 <Typography variant="h3">Tormi Viirg</Typography>
                 <Typography variant="h3">Bio</Typography>
                 <Typography variant="body2">
-                    Olen informaatika eriala teise aasta tudeng Tallinna Ülikoolist tarkvaraarenduse suunalt. Olen pädev
+                    Olen informaatika eriala tudeng Tallinna Ülikoolist tarkvaraarenduse suunalt. Olen pädev
                     veebiprogrammeerimises, dünaamiliste ja infotihedate kasutajaliideste disainimises, digimeedias,
                     andmetöötluses ja selle automatiseerimises, täiendavate, sügavate riistvara alaste teadmistega. Oman
                     ülikoolipoolset IT-alase tiimitöö kogemust ning oskust kasutada õpitut loominguliselt uutes kontekstides ja
