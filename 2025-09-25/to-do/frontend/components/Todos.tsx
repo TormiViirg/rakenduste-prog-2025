@@ -2,7 +2,7 @@ import { Box, List, ListItem, ListItemText, Typography, IconButton, Stack, Paper
 import React, { useEffect, useState } from "react";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
-
+import SubmitTodo from "./SubmitTodo";
 
 type Todo = {
   id: string;
@@ -27,7 +27,7 @@ const Todos = () => {
       const data = await res.json();
       setTodos(data);
     } catch {
-      setSnack({ open: true, msg: "Load failed", severity: "error" });
+      setSnack({ open: true, msg: "Load failed, we'll get them next time", severity: "error" });
     }
   };
 
