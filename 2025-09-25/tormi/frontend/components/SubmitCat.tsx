@@ -13,14 +13,14 @@ const SubmitCat = ({ fetchCats }: SubmitCatProps) => {
       const response = await fetch("http://localhost:3000/cats", {
         method: "POST",
         headers: {
-          Accept: "application/json",
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ name: name }),
+        body: JSON.stringify({ name }),
       });
 
       if (response.ok) {
         console.log("Success", response);
+        fetchCats();
       } else {
         console.warn("No success");
       }
@@ -31,19 +31,17 @@ const SubmitCat = ({ fetchCats }: SubmitCatProps) => {
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
-
     submitCat();
-    setTimeout(fetchCats, 100);
+    setName("");
   };
 
   return (
-    <Box
-      sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}
-    >
+    <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
       <form onSubmit={handleSubmit}>
-        <Stack>
+        <Stack spacing={2}>
           <TextField
             label="Cat name"
+            value={name}
             onChange={(event) => setName(event.target.value)}
           />
           <Button variant="contained" color="success" type="submit">
