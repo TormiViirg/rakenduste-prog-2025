@@ -27,7 +27,7 @@ const ToDos = () => {
       const data = await res.json();
       setToDos(data);
     } catch {
-      setSnack({ open: true, msg: "Load failed, we'll get them next time", severity: "error" });
+      setSnack({ open: true, msg: "Load failed", severity: "error" });
     }
   };
 

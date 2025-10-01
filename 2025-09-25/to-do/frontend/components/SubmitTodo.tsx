@@ -24,7 +24,7 @@ export default function SubmitToDo({ onCreated }: Props) {
         setTitle("");
         await onCreated();
       } else {
-        alert("Failed to create ToDo hope you noticed");
+        alert("Failed to create ToDo");
       }
     } finally {
       setSubmitting(false);
@@ -35,7 +35,7 @@ export default function SubmitToDo({ onCreated }: Props) {
     <Box component="form" onSubmit={handleSubmit} sx={{ mt: 2 }}>
       <Stack direction="row" spacing={2}>
         <TextField
-          label="Lil title"
+          label="Write to-do"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           fullWidth
