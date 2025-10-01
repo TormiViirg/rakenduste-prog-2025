@@ -1,13 +1,14 @@
 const express = require("express");
+const cors = require("cors");
+
+const todosRoutes = require("./routes/todos.routes"); // <-- routes file (should export a router)
+
 const app = express();
 const port = 3000;
-const cors = require("cors");
-const catsRoutes = require("./routes/todos.routes");
 
-
+app.use(cors({ origin: "http://localhost:5173" }));
 app.use(express.json());
-
-app.use("/todos", catsRoutes);
+app.use("/todos", todosRoutes);
 
 app.use((err, req, res, next) => {
   console.error(err);
@@ -17,5 +18,5 @@ app.use((err, req, res, next) => {
 });
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
+  console.log(`Server running at http://localhost:${port}`);
 });

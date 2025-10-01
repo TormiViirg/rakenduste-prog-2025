@@ -3,7 +3,7 @@ import { useState } from "react";
 
 type Props = { onCreated: () => Promise<void> | void };
 
-export default function SubmitTodo({ onCreated }: Props) {
+export default function SubmitToDo({ onCreated }: Props) {
   const [title, setTitle] = useState("");
   const [submitting, setSubmitting] = useState(false);
 

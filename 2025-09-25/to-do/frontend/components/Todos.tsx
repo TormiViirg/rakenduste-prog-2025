@@ -1,8 +1,8 @@
 import { Box, List, ListItem, ListItemText, Typography, IconButton, Stack, Paper, Snackbar, Alert } from "@mui/material";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState} from "react";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
-import SubmitTodo from "./SubmitTodo";
+import SubmitTodo from "./SubmitToDo";
 
 type Todo = {
   id: string;
@@ -13,29 +13,29 @@ type Todo = {
   archivedAt: number | null;
 };
 
-const Todos = () => {
-  const [todos, setTodos] = useState<Todo[]>([]);
+const ToDos = () => {
+  const [todos, setToDos] = useState<Todo[]>([]);
   const [snack, setSnack] = useState<{
     open: boolean;
     msg: string;
     severity: "success" | "error";
   }>({ open: false, msg: "", severity: "success" });
 
-  const fetchTodos = async () => {
+  const fetchToDos = async () => {
     try {
       const res = await fetch("http://localhost:3000/todos");
       const data = await res.json();
-      setTodos(data);
+      setToDos(data);
     } catch {
       setSnack({ open: true, msg: "Load failed, we'll get them next time", severity: "error" });
     }
   };
 
   useEffect(() => {
-    fetchTodos();
+    fetchToDos();
   }, []);
 
-  const updateTodo = async (id: string, current: string) => {
+  const updateToDo = async (id: string, current: string) => {
     const title = prompt("Update todo title?", current || "");
     if (!title) return;
     await fetch(`http://localhost:3000/todos/${id}`, {
@@ -43,13 +43,13 @@ const Todos = () => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ title }),
     });
-    fetchTodos();
+    fetchToDos();
     setSnack({ open: true, msg: "Todo updated", severity: "success" });
   };
 
-  const deleteTodo = async (id: string) => {
+  const deleteToDo = async (id: string) => {
     await fetch(`http://localhost:3000/todos/${id}`, { method: "DELETE" });
-    fetchTodos();
+    fetchToDos();
     setSnack({ open: true, msg: "Todo archived", severity: "success" });
   };
 
@@ -65,10 +65,10 @@ const Todos = () => {
             <ListItem
               secondaryAction={
                 <Stack direction="row" spacing={1}>
-                  <IconButton aria-label="edit" onClick={() => updateTodo(todo.id, todo.title)}>
+                  <IconButton aria-label="edit" onClick={() => updateToDo(todo.id, todo.title)}>
                     <EditIcon />
                   </IconButton>
-                  <IconButton aria-label="delete" color="error" onClick={() => deleteTodo(todo.id)}>
+                  <IconButton aria-label="delete" color="error" onClick={() => deleteToDo(todo.id)}>
                     <DeleteIcon />
                   </IconButton>
                 </Stack>
@@ -83,7 +83,7 @@ const Todos = () => {
         ))}
       </List>
 
-      <SubmitTodo onCreated={fetchTodos} />
+      <SubmitTodo onCreated={fetchToDos} />
 
       <Snackbar
         open={snack.open}
@@ -103,4 +103,4 @@ const Todos = () => {
   );
 };
 
-export default Todos;
+export default ToDos;
