@@ -94,3 +94,37 @@ exports.deleteTodo = (req, res, next) => {
     next(error);
   }
 };
+
+exports.getTodos = (req, res, next) => {
+  try {
+    const activeTodos = todoList.filter((todo) => !todo.isArchived);
+    return res.json(activeTodos);
+  } catch (error) {
+    next(error);
+  }
+};
+
+exports.toggleTodo = (req, res, next) => {
+  try {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
+    }
+
+    const { id } = req.params;
+    const todoIndex = todoList.findIndex((todo) => todo.id === id);
+
+    if (todoIndex === -1) {
+      return res.status(404).json({ message: "Todo not found" });
+    }
+
+    const todo = todoList[todoIndex];
+    todo.isArchived = !todo.isArchived;
+    todo.updatedAt = Date.now();
+    todo.archivedAt = todo.isArchived ? Date.now() : null;
+
+    return res.json(todo);
+  } catch (error) {
+    next(error);
+  }
+};
